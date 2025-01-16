@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Parisienne', serif;
-  background: url('fotos/lua.png') no-repeat center center fixed;
+  background: url('fotos/lua.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -15,12 +15,11 @@ body {
 
 /* Estilo do contêiner principal */
 #container {
-  max-width: 90%;
+  width: 400px;  /* Definindo a largura fixa */
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
-  width: 100%;
   min-height: 200px;
 }
 
@@ -28,7 +27,8 @@ body {
 #main-image {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 15px; /* Borda arredondada com valor menor */
+  border-color: white;
   object-fit: cover;
   margin: 10px auto;
   display: block;
