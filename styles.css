@@ -19,9 +19,9 @@ body {
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  position: relative; /* Necessário para posicionar o botão no fundo */
-  width: 100%; /* Faz o contêiner ocupar toda a largura disponível */
-  min-height: 300px; /* Definir uma altura mínima */
+  position: relative;
+  width: 100%;
+  min-height: 300px;
 }
 
 /* Estilo da imagem principal */
@@ -38,26 +38,17 @@ body {
 h1 {
   font-size: 24px;
   margin: 10px 0;
-  font-family: 'Parisienne', serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 /* Estilo do contador */
 #counter {
   font-size: 24px;
-  font-family: 'Parisienne', serif;
-  font-weight: 400;
-  font-style: normal;
   margin: 10px 0;
 }
 
 /* Estilo da data abaixo do contador */
 #date {
   font-size: 18px;
-  font-family: 'Parisienne', serif;
-  font-weight: 400;
-  font-style: normal;
   margin-top: -5px;
   opacity: 0.8;
 }
@@ -71,9 +62,6 @@ h1 {
   padding: 10px;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Parisienne', serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .arrow:hover {
@@ -86,12 +74,11 @@ h1 {
   background: none;
   border: none;
   color: white;
-  font-size: 14px;  /* Menor tamanho */
-  font-family: 'Parisienne', serif;
+  font-size: 14px;
   cursor: pointer;
   position: absolute;
-  bottom: 10px;  /* Coloca o botão no canto inferior */
-  right: 10px;   /* Coloca no canto inferior direito */
+  bottom: 10px;
+  right: 10px;
   opacity: 0.8;
 }
 
@@ -99,85 +86,41 @@ h1 {
   opacity: 1;
 }
 
-/* Estilo para esconder as setas de avançar no card de noivado */
-.hide-arrow {
-  display: none;
-}
-
 /* Responsividade para telas pequenas (celulares) */
 @media (max-width: 600px) {
-  /* Ajusta o tamanho da fonte do título */
+  body {
+    flex-direction: column; /* Certifica que os elementos se alinham em coluna */
+  }
+
   h1 {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 
-  /* Ajusta o tamanho do contador */
   #counter {
-    font-size: 18px;
+    font-size: 16px !important;
   }
 
-  /* Ajusta o tamanho da data */
   #date {
-    font-size: 16px;
+    font-size: 14px !important;
   }
 
-  /* Ajusta a imagem principal */
   #main-image {
-    width: 150px;
-    height: 150px;
+    width: 120px !important;
+    height: 120px !important;
   }
 
-  /* Ajusta os botões de seta */
-  .arrow {
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  /* Ajusta o botão "Coming soon..." */
-  #coming-soon {
-    font-size: 12px;
-  }
-
-  /* Ajusta o contêiner para usar mais espaço na tela */
   #container {
-    max-width: 95%;
-    padding: 15px;
-    min-height: 250px;
-  }
-}
-
-/* Responsividade para telas menores (como smartphones muito pequenos) */
-@media (max-width: 400px) {
-  /* Ajusta ainda mais o tamanho da fonte do título */
-  h1 {
-    font-size: 16px;
+    max-width: 95% !important;
+    padding: 10px !important;
+    min-height: 250px !important;
   }
 
-  /* Ajusta o contador para se ajustar a telas menores */
-  #counter {
-    font-size: 16px;
-  }
-
-  /* Ajusta a imagem principal */
-  #main-image {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* Ajusta os botões de seta */
   .arrow {
-    padding: 6px;
-    font-size: 14px;
+    padding: 6px !important;
+    font-size: 14px !important;
   }
 
-  /* Ajusta o botão "Coming soon..." */
   #coming-soon {
-    font-size: 10px;
-  }
-
-  /* Ajusta o contêiner */
-  #container {
-    padding: 10px;
-    min-height: 220px;
+    font-size: 10px !important;
   }
 }
