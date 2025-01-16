@@ -1,0 +1,183 @@
+/* Configurações gerais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Parisienne', serif;
+  background: url('fundo-lua.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+/* Estilo do contêiner principal */
+#container {
+  max-width: 90%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  position: relative; /* Necessário para posicionar o botão no fundo */
+  width: 100%; /* Faz o contêiner ocupar toda a largura disponível */
+  min-height: 300px; /* Definir uma altura mínima */
+}
+
+/* Estilo da imagem principal */
+#main-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Estilo do título */
+h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  font-family: 'Parisienne', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Estilo do contador */
+#counter {
+  font-size: 24px;
+  font-family: 'Parisienne', serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px 0;
+}
+
+/* Estilo da data abaixo do contador */
+#date {
+  font-size: 18px;
+  font-family: 'Parisienne', serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -5px;
+  opacity: 0.8;
+}
+
+/* Estilo dos botões de seta */
+.arrow {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Parisienne', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arrow:hover {
+  background: white;
+  color: black;
+}
+
+/* Estilo do botão "Coming soon..." */
+#coming-soon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;  /* Menor tamanho */
+  font-family: 'Parisienne', serif;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;  /* Coloca o botão no canto inferior */
+  right: 10px;   /* Coloca no canto inferior direito */
+  opacity: 0.8;
+}
+
+#coming-soon:hover {
+  opacity: 1;
+}
+
+/* Estilo para esconder as setas de avançar no card de noivado */
+.hide-arrow {
+  display: none;
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 600px) {
+  /* Ajusta o tamanho da fonte do título */
+  h1 {
+    font-size: 18px;
+  }
+
+  /* Ajusta o tamanho do contador */
+  #counter {
+    font-size: 18px;
+  }
+
+  /* Ajusta o tamanho da data */
+  #date {
+    font-size: 16px;
+  }
+
+  /* Ajusta a imagem principal */
+  #main-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Ajusta os botões de seta */
+  .arrow {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  /* Ajusta o botão "Coming soon..." */
+  #coming-soon {
+    font-size: 12px;
+  }
+
+  /* Ajusta o contêiner para usar mais espaço na tela */
+  #container {
+    max-width: 95%;
+    padding: 15px;
+    min-height: 250px;
+  }
+}
+
+/* Responsividade para telas menores (como smartphones muito pequenos) */
+@media (max-width: 400px) {
+  /* Ajusta ainda mais o tamanho da fonte do título */
+  h1 {
+    font-size: 16px;
+  }
+
+  /* Ajusta o contador para se ajustar a telas menores */
+  #counter {
+    font-size: 16px;
+  }
+
+  /* Ajusta a imagem principal */
+  #main-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Ajusta os botões de seta */
+  .arrow {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  /* Ajusta o botão "Coming soon..." */
+  #coming-soon {
+    font-size: 10px;
+  }
+
+  /* Ajusta o contêiner */
+  #container {
+    padding: 10px;
+    min-height: 220px;
+  }
+}
