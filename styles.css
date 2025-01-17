@@ -15,7 +15,7 @@ body {
 
 /* Estilo do contêiner principal */
 #container {
-  width: 400px;  /* Definindo a largura fixa */
+  width: 400px; /* Definindo a largura fixa */
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
@@ -123,4 +123,23 @@ h1 {
   #coming-soon {
     font-size: 10px !important;
   }
+}
+
+/* Scroll Lock para evitar rolagem e barra branca */
+/* Bloqueio do scroll ao ativar a classe 'scroll-lock' */
+html.scroll-lock,
+body.scroll-lock {
+  overflow: hidden; /* Remove o scroll */
+  height: 100%; /* Evita barra branca inferior */
+  touch-action: none; /* Desabilita o arrasto no celular */
+}
+
+body.scroll-lock {
+  position: fixed; /* Fixa a tela */
+  width: 100%; /* Garante largura total */
+  margin: 0;
+}
+
+.scroll-lock-fix {
+  overscroll-behavior: none; /* Remove o efeito elástico do scroll */
 }
