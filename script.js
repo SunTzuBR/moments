@@ -1,4 +1,4 @@
-// Array com os eventos, datas, músicas e o botão "Coming soon"
+// Array com os eventos, datas e músicas
 const events = [
   { title: "Nesses desde que te vi a primeira vez eu queria te dar um presente único e que será eternizado por toda vida", date: "2022-04-25", image: "", music: "" },
   { title: "Nosso encontro", date: "2022-04-25", image: "fotos/encontro.png", music: "musicas/encontro.mp3" },
@@ -27,10 +27,10 @@ function updateContent() {
   // Calcula a diferença em dias entre hoje e a data do evento
   const difference = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
 
-  // Atualiza o título, mostrando contagem de dias apenas no primeiro evento
+  // Atualiza o título
   let titleText = event.title;
   if (currentIndex === 0) {
-    titleText = `Nesses ${difference} dias desde que te vi pela primeira vez, tive a certeza de que você é o amor da minha vida e a mulher que pedi a Deus. Quero te dar um presente único, algo que será eternizado por toda a nossa vida`;
+    titleText = `Nesses ${difference} dias desde que te vi pela primeira vez, tive a certeza de que você é o amor da minha vida e a mulher que pedi a Deus. Quero te dar um presente único, algo que será eternizado por toda a nossa vida.`;
   }
 
   document.querySelector("h1").innerText = titleText;
@@ -44,7 +44,7 @@ function updateContent() {
     counterElement.innerText = `${difference} dias`; // Atualiza o contador
   }
 
-  // Exibe ou esconde a imagem e a música de fundo
+  //esconde a imagem e a música de fundo
   document.getElementById("main-image").style.display = event.image ? 'block' : 'none';
   if (event.image) {
     document.getElementById("main-image").src = event.image;
@@ -83,7 +83,7 @@ function updateContent() {
     document.getElementById("next").classList.remove("hide-arrow");
   }
 
-  // Mostra ou esconde o botão "Coming soon..." para o card do noivado
+  // Mostra ou esconde o botão Coming soon...
   document.getElementById("coming-soon").style.display = currentIndex === 4 ? "inline-block" : "none";
 }
 
@@ -102,11 +102,11 @@ document.getElementById("next").addEventListener("click", () => {
   }
 });
 
-// Evento "Coming soon..." - Leva para o último card
+// Evento Coming soon...
 document.getElementById("coming-soon").addEventListener("click", () => {
   currentIndex = events.length - 1;
   updateContent();
 });
 
-// Inicializa o conteúdo
+
 updateContent();
