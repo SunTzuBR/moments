@@ -15,6 +15,9 @@ function updateContent() {
   const event = events[currentIndex];
   const startDate = new Date(event.date);
   const now = new Date();
+  function bloquearScroll() {
+    document.body.style.overflow = "hidden";
+  }
   
 
   // Resetar horas, minutos, segundos e milissegundos para comparar apenas data (ano, mês, dia)
