@@ -4,7 +4,7 @@ body {
   padding: 0;
   font-family: 'Parisienne', serif;
   background: url('fotos/lua.jpg') no-repeat center center fixed;
-  background-size: fill;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
