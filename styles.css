@@ -21,7 +21,7 @@ body {
   border-radius: 10px;
   position: relative;
   min-height: 100px;
-  max-width: 200px;
+  max-width: 300px;
 }
 
 /* Estilo da imagem principal */
@@ -113,7 +113,7 @@ h1 {
   }
 
   #container {
-    max-width: 60% !important;
+    max-width: 40% !important;
     padding: 10px !important;
     min-height: 250px !important;
   }
