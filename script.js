@@ -15,6 +15,7 @@ function updateContent() {
   const event = events[currentIndex];
   const startDate = new Date(event.date);
   const now = new Date();
+  
 
   // Resetar horas, minutos, segundos e milissegundos para comparar apenas data (ano, mês, dia)
   startDate.setHours(0, 0, 0, 0);
