@@ -92,6 +92,7 @@ h1 {
 @media (max-width: 600px) {
   body {
     flex-direction: column; /* Certifica que os elementos se alinham em coluna */
+    height: 100vh;
   }
 
   h1 {
@@ -112,7 +113,7 @@ h1 {
   }
 
   #container {
-    max-width: 70% !important;
+    max-width: 60% !important;
     padding: 10px !important;
     min-height: 250px !important;
   }
