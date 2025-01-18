@@ -15,13 +15,13 @@ body {
 
 /* Estilo do contêiner principal */
 #container {
-  width: 400px; /* Definindo a largura fixa */
+  width: 400px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
-  min-height: 100px;
-  max-width: 300px;
+  min-height: 200px;
+  max-width: 400px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .fade-out {
@@ -31,14 +31,14 @@ body {
 
 .fade-in {
   opacity: 1;
-  transform: translateX(0); /* Volta à posição original */
+  transform: translateX(0);
 }
 
 /* Estilo da imagem principal */
 #main-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px; /* Borda arredondada com valor menor */
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
   border-color: white;
   object-fit: cover;
   margin: 10px auto;
@@ -47,19 +47,19 @@ body {
 
 /* Estilo do título */
 h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin: 10px 0;
 }
 
 /* Estilo do contador */
 #counter {
-  font-size: 24px;
+  font-size: 27px;
   margin: 10px 0;
 }
 
 /* Estilo da data abaixo do contador */
 #date {
-  font-size: 12px;
+  font-size: 18px;
   margin-top: -5px;
   opacity: 0.8;
 }
@@ -85,8 +85,8 @@ h1 {
   background: none;
   border: none;
   color: white;
-  font-size: 14px;
-  font-family: 'Parisienne', serif; /* Adicionando a mesma fonte */
+  font-size: 20px;
+  font-family: 'Parisienne', serif;
   cursor: pointer;
   position: absolute;
   bottom: 10px;
@@ -98,28 +98,27 @@ h1 {
   opacity: 1;
 }
 
-/* Responsividade para telas pequenas (celulares) */
 @media (max-width: 600px) {
   body {
-    flex-direction: column; /* Certifica que os elementos se alinham em coluna */
+    flex-direction: column;
     height: 100vh;
   }
 
   h1 {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
 
   #counter {
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
 
   #date {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 
   #main-image {
-    width: 120px !important;
-    height: 120px !important;
+    width: 200px !important;
+    height: 200px !important;
   }
 
   #container {
@@ -130,12 +129,12 @@ h1 {
   }
 
   .arrow {
-    padding: 6px !important;
+    padding: 8px !important;
     font-size: 14px !important;
   }
 
   #coming-soon {
-    font-size: 10px !important;
+    font-size: 16px !important;
   }
 }
 

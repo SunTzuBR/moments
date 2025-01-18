@@ -6,7 +6,7 @@ const events = [
   { title: "Nosso recomeço", date: "2023-10-02", image: "fotos/recomeco.png", music: "musicas/recomeco.mp3" },
   { title: "Nosso noivado", date: "2024-10-28", image: "fotos/noivado.png", music: "musicas/noivado.mp3" },
   { title: "Nosso casamento", date: "2026-11-02", image: "fotos/casamento.png", music: "musicas/casamento.mp3" }
-  /* SEMPRE COLOCAR UM DIA A MAIS POIS BUGOU NA HORA DA CONVERSÃO DE UTC E NÃO CONSEGUI RESOLVER(aCREDITO QUE MEU EU DO FUTURO IRÁ CONSEGUIR) */
+  /* SEMPRE COLOCAR UM DIA A MAIS POIS BUGOU NA HORA DA CONVERSÃO DE UTC E NÃO CONSEGUI RESOLVER(ACREDITO QUE MEU EU DO FUTURO IRÁ CONSEGUIR) */
 ];
 
 let currentIndex = 0;
@@ -15,11 +15,11 @@ let currentIndex = 0;
 function applyTransitionEffect(callback) {
   const container = document.getElementById("container");
   container.style.transition = "opacity 0.5s";
-  container.style.opacity = 0; // Oculta o conteúdo com fade-out
+  container.style.opacity = 0; // Oculta o fade-out
 
   setTimeout(() => {
-    callback(); // Chama a função de atualização
-    container.style.opacity = 1; // Reexibe o conteúdo com fade-in
+    callback();
+    container.style.opacity = 1; // Reexibe o fade-in
   }, 500); // Tempo de duração da transição (em milissegundos)
 }
 
@@ -28,14 +28,13 @@ function updateContent() {
   const startDate = new Date(event.date);
   const now = new Date();
 
-  // Resetar horas, minutos, segundos e milissegundos para comparar apenas data (ano, mês, dia)
+  // Resetar horas, minutos, segundos e milissegundos
   startDate.setHours(0, 0, 0, 0);
   now.setHours(0, 0, 0, 0);
 
   // Calcula a diferença em dias entre hoje e a data do evento
   const difference = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
 
-  // Atualiza o título
   let titleText = event.title;
   if (currentIndex === 0) {
     titleText = `Nesses ${difference} dias desde que te vi pela primeira vez, tive a certeza de que você é o amor da minha vida e a mulher que pedi a Deus. Quero te dar um presente único, algo que será eternizado por toda a nossa vida.`;
@@ -43,13 +42,12 @@ function updateContent() {
 
   document.querySelector("h1").innerText = titleText;
 
-  // Exibe ou esconde o contador
   const counterElement = document.getElementById("counter");
   if (currentIndex === 0) {
     counterElement.style.display = "none"; // Esconde o contador no primeiro evento
   } else {
     counterElement.style.display = "block"; // Exibe o contador nos outros eventos
-    counterElement.innerText = `${difference} dias`; // Atualiza o contador
+    counterElement.innerText = `${difference} dias`;
   }
 
   // Atualiza a imagem e a música de fundo
@@ -121,5 +119,4 @@ document.getElementById("coming-soon").addEventListener("click", () => {
   });
 });
 
-// Inicializa o conteúdo
 updateContent();
