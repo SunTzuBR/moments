@@ -11,14 +11,21 @@ const events = [
 
 let currentIndex = 0;
 
+// Função para criar o efeito de transição
+function applyTransitionEffect() {
+  const container = document.getElementById("container");
+  container.style.opacity = 0; // Inicia com opacidade zero
+  setTimeout(() => {
+    updateContent(); // Atualiza o conteúdo do card
+    container.style.opacity = 1; // Retorna a opacidade
+  }, 500); // Tempo da transição (em milissegundos)
+}
+
+// Função para atualizar o conteúdo dos cards
 function updateContent() {
   const event = events[currentIndex];
   const startDate = new Date(event.date);
   const now = new Date();
-  function bloquearScroll() {
-    document.body.style.overflow = "hidden";
-  }
-  
 
   // Resetar horas, minutos, segundos e milissegundos para comparar apenas data (ano, mês, dia)
   startDate.setHours(0, 0, 0, 0);
@@ -32,56 +39,48 @@ function updateContent() {
   if (currentIndex === 0) {
     titleText = `Nesses ${difference} dias desde que te vi pela primeira vez, tive a certeza de que você é o amor da minha vida e a mulher que pedi a Deus. Quero te dar um presente único, algo que será eternizado por toda a nossa vida.`;
   }
-
   document.querySelector("h1").innerText = titleText;
 
   // Exibe ou esconde o contador
   const counterElement = document.getElementById("counter");
   if (currentIndex === 0) {
-    counterElement.style.display = 'none'; // Esconde o contador no primeiro evento
+    counterElement.style.display = "none"; // Esconde o contador no primeiro evento
   } else {
-    counterElement.style.display = 'block'; // Exibe o contador nos outros eventos
+    counterElement.style.display = "block"; // Exibe o contador nos outros eventos
     counterElement.innerText = `${difference} dias`; // Atualiza o contador
   }
 
-  //esconde a imagem e a música de fundo
-  document.getElementById("main-image").style.display = event.image ? 'block' : 'none';
+  // Atualiza a imagem principal
+  const mainImage = document.getElementById("main-image");
+  mainImage.style.display = event.image ? "block" : "none";
   if (event.image) {
-    document.getElementById("main-image").src = event.image;
+    mainImage.src = event.image;
   }
 
+  // Atualiza a música de fundo
   const audioElement = document.getElementById("background-music");
   if (event.music) {
     audioElement.src = event.music;
     audioElement.play();
   }
 
-  // Exibe ou esconde a data, e ajusta para o primeiro evento
+  // Exibe ou esconde a data
   const dateElement = document.getElementById("date");
   if (currentIndex === 0) {
-    dateElement.style.display = 'none';
+    dateElement.style.display = "none";
   } else {
-    dateElement.style.display = 'block';
-    
-    // Formata a data como dia/mês/ano
-    const formattedDate = startDate.toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
+    dateElement.style.display = "block";
+    const formattedDate = startDate.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
     });
     dateElement.innerText = formattedDate;
   }
 
-  // Mostra ou esconde as setas de navegação
+  // Controla a visibilidade das setas de navegação
   document.getElementById("prev").style.display = currentIndex === 0 ? "none" : "inline-block";
-  document.getElementById("next").style.display = (currentIndex === events.length - 1 || currentIndex === events.length - 2) ? "none" : "inline-block"; 
-
-  // Esconde a seta de avançar no card de noivado e no evento futuro
-  if (currentIndex === 4) {
-    document.getElementById("next").classList.add("hide-arrow");
-  } else {
-    document.getElementById("next").classList.remove("hide-arrow");
-  }
+  document.getElementById("next").style.display = currentIndex === events.length - 1 ? "none" : "inline-block";
 
   // Mostra ou esconde o botão Coming soon...
   document.getElementById("coming-soon").style.display = currentIndex === 4 ? "inline-block" : "none";
@@ -91,22 +90,18 @@ function updateContent() {
 document.getElementById("prev").addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
-    updateContent();
+    applyTransitionEffect();
   }
 });
 
 document.getElementById("next").addEventListener("click", () => {
   if (currentIndex < events.length - 1) {
     currentIndex++;
-    updateContent();
+    applyTransitionEffect();
   }
 });
 
-// Evento Coming soon...
-document.getElementById("coming-soon").addEventListener("click", () => {
-  currentIndex = events.length - 1;
+// Inicializa o conteúdo ao carregar a página
+window.onload = () => {
   updateContent();
-});
-
-
-updateContent();
+};
