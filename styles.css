@@ -189,9 +189,9 @@ h1 {
   }
 
   #container {
-    max-width: 80% !important; /* Reduz a largura do container para caber melhor em telas menores */
+    max-width: 100% !important; /* Reduz a largura do container para caber melhor em telas menores */
     padding: 10px !important;
-    min-height: 250px !important;
+    min-height: 400px !important;
     max-height: 400px !important;
   }
 
