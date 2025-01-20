@@ -5,7 +5,7 @@ const events = [
   { title: "Nosso primeiro beijo", date: "2022-05-02", image: "fotos/beijo.png", music: "musicas/beijo.mp3" },
   { title: "Nosso recomeço", date: "2023-10-02", image: "fotos/recomeco.png", music: "musicas/recomeco.mp3" },
   { title: "Nosso noivado", date: "2024-10-28", image: "fotos/noivado.png", music: "musicas/noivado.mp3" },
-  { title: "Nosso casamento", date: "2026-11-02", image: "fotos/casamento.png", music: "musicas/casamento.mp3" }
+  { title: "Nosso casamento", date: "2026-11-28", image: "fotos/casamento.png", music: "musicas/casamento.mp3" }
   /* SEMPRE COLOCAR UM DIA A MAIS POIS BUGOU NA HORA DA CONVERSÃO DE UTC E NÃO CONSEGUI RESOLVER(ACREDITO QUE MEU EU DO FUTURO IRÁ CONSEGUIR) */
 ];
 
