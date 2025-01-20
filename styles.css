@@ -187,6 +187,7 @@ h1 {
   #main-image {
     width: 400px !important; /* Mantém a largura fixa da imagem */
     height: 390px !important; /* Mantém a altura fixa da imagem */
+    margin: 10px 0; /* Ajuste no espaçamento da imagem */
   }
 
   #container {
@@ -195,6 +196,7 @@ h1 {
     min-height: 250px !important;
     max-height: 400px !important;
     flex-direction: column;
+    align-items: center; /* Garante que o conteúdo do container se mantenha centralizado */
   }
 
   .arrow {
