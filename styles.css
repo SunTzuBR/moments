@@ -1,4 +1,4 @@
-/* Configurações gerais */
+/* Estilo geral do corpo */
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +11,8 @@ body {
   height: 100vh;
   color: white;
   text-align: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* Estilo do contêiner principal */
@@ -20,24 +22,69 @@ body {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
-  min-height: 200px;
+  min-height: 400px; /* Aumenta a altura mínima para acomodar todos os elementos */
   max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que os elementos se distribuam */
+  align-items: center;
+  text-align: center;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.fade-out {
-  opacity: 0;
-  transform: translateX(-50px); /* Move ligeiramente para a esquerda */
+
+/* Contêiner do título */
+#title-container {
+  margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
-.fade-in {
-  opacity: 1;
-  transform: translateX(0);
+/* Card com perspectiva para o efeito de flip */
+.card {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.card .front {
+  background: rgba(0, 0, 0, 0);
+}
+
+.card .back {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Esconde o flip para o primeiro evento */
+.card.no-flip {
+  pointer-events: none;
 }
 
 /* Estilo da imagem principal */
 #main-image {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 390px;
   border-radius: 15px;
   border-color: white;
   object-fit: cover;
@@ -51,17 +98,35 @@ h1 {
   margin: 10px 0;
 }
 
-/* Estilo do contador */
-#counter {
-  font-size: 27px;
-  margin: 10px 0;
+/* Contêiner de contador e data fora do card */
+#counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  z-index: 1; /* Garante que o contador e a data fiquem acima do card */
 }
 
-/* Estilo da data abaixo do contador */
+/* Estilo do contador e data */
+#counter {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
 #date {
   font-size: 18px;
-  margin-top: -5px;
   opacity: 0.8;
+}
+
+/* Contêiner das setas (dentro do container) */
+#arrows-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Garante que as setas fiquem abaixo do contador */
+  gap: 20px; /* Cria um espaço entre as setas */
 }
 
 /* Estilo dos botões de seta */
@@ -73,6 +138,7 @@ h1 {
   padding: 10px;
   cursor: pointer;
   font-size: 18px;
+  flex-shrink: 0; /* Impede que as setas encolham */
 }
 
 .arrow:hover {
@@ -136,23 +202,4 @@ h1 {
   #coming-soon {
     font-size: 16px !important;
   }
-}
-
-/* Scroll Lock para evitar rolagem e barra branca */
-/* Bloqueio do scroll ao ativar a classe 'scroll-lock' */
-html.scroll-lock,
-body.scroll-lock {
-  overflow: hidden; /* Remove o scroll */
-  height: 100%; /* Evita barra branca inferior */
-  touch-action: none; /* Desabilita o arrasto no celular */
-}
-
-body.scroll-lock {
-  position: fixed; /* Fixa a tela */
-  width: 100%; /* Garante largura total */
-  margin: 0;
-}
-
-.scroll-lock-fix {
-  overscroll-behavior: none; /* Remove o efeito elástico do scroll */
 }

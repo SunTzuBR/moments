@@ -18,17 +18,38 @@
   </audio>
 
   <div id="container">
-    <!-- A imagem será controlada pelo JS, no primeiro evento não tem imagem -->
-    <img id="main-image" alt="Imagem do Evento" style="display: none;"> <!-- Escondido inicialmente -->
-    <h1></h1>
-    <div id="counter"></div>
-    <div id="date"></div>
+    <!-- Contêiner do título -->
+    <div id="title-container">
+      <h1></h1>
+    </div>
 
-    <!-- Setas de navegação -->
-    <button id="prev" class="arrow">&lt;</button>
-    <button id="next" class="arrow">&gt;</button>
+    <!-- Card com efeito de flip -->
+    <div class="card" id="card">
+      <!-- Lado frontal do card -->
+      <div class="front">
+        <!-- A imagem será controlada pelo JS, no primeiro evento não tem imagem -->
+        <img id="main-image" alt="Imagem do Evento" style="display: none;"> <!-- Escondido inicialmente -->
+      </div>
 
-    <!-- Botão "Coming soon..." no card do noivado -->
+      <!-- Lado traseiro do card -->
+      <div class="back">
+        <p id="back-text">Detalhes do evento aparecerão aqui após o flip.</p>
+      </div>
+    </div>
+
+    <!-- Data e contador fora do efeito de rotação -->
+    <div id="counter-container">
+      <div id="counter"></div>
+      <div id="date"></div>
+    </div>
+
+    <!-- Contêiner das setas, abaixo do contador e da data -->
+    <div id="arrows-container">
+      <button id="prev" class="arrow">&lt;</button>
+      <button id="next" class="arrow">&gt;</button>
+    </div>
+
+    <!-- Botão "Coming soon..." no penúltimo evento -->
     <button id="coming-soon" class="coming-soon">Em breve....</button>
   </div>
 
