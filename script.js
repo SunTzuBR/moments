@@ -12,7 +12,7 @@ const events = [
     date: "2022-04-25",
     image: "fotos/encontro.png",
     music: "musicas/encontro.mp3",
-    details: "Foi aqui que nossos caminhos se cruzaram pela primeira vez."
+    details: "No primeiro dia que te vi, foi como se eu estivesse vendo um relance do paraíso. E mesmo sem te dar nem um beijo, foi você quem eu procurei por tanto tempo. Agradeço a Deus todos os dias por ter te encontrado"
   },
   {
     title: "Nosso primeiro beijo",
