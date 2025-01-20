@@ -189,6 +189,16 @@ h1 {
     height: 300px !important; /* Mantém a altura fixa da imagem */
     margin: 10px 0; /* Ajuste no espaçamento da imagem */
   }
+  .card .back {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
   #container {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
