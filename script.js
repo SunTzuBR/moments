@@ -46,93 +46,114 @@ const events = [
 
 let currentIndex = 0;
 
-// Atualiza o conteúdo do card
+// Função para criar o efeito de transição
+function applyTransitionEffect() {
+  const container = document.getElementById("container");
+  container.style.opacity = 0; // Inicia com opacidade zero
+  setTimeout(() => {
+    updateContent(); // Atualiza o conteúdo do card
+    container.style.opacity = 1; // Retorna a opacidade
+  }, 500); // Tempo da transição (em milissegundos)
+}
+// Atualiza o conteúdo do card com efeito de fade
 function updateContent() {
-  const event = events[currentIndex];
-  const startDate = new Date(event.date);
-  const now = new Date();
+  // Adiciona a classe de fade-out
+  const container = document.querySelector("#container");
+  container.classList.add("fade-out");
 
-  startDate.setHours(0, 0, 0, 0);
-  now.setHours(0, 0, 0, 0);
+  // Espera o tempo do fade-out antes de atualizar o conteúdo
+  setTimeout(() => {
+    const event = events[currentIndex];
+    const startDate = new Date(event.date);
+    const now = new Date();
 
-  const difference = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-  let titleText = event.title;
+    startDate.setHours(0, 0, 0, 0);
+    now.setHours(0, 0, 0, 0);
 
-  if (currentIndex === 0) {
-    titleText = `Nestes ${difference} dias desde que te vi, você sempre foi e sempre será a mulher da minha vida, a mulher que pedi a Deus para minha vida. Te amo hoje, amanhã e sempre, e que aqui fiquem eternizados todos os nossos momentos juntos.`;
-  }
+    const difference = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+    let titleText = event.title;
 
-  document.querySelector("h1").innerText = titleText;
+    if (currentIndex === 0) {
+      titleText = `Nestes ${difference} dias desde que te vi, você sempre foi e sempre será a mulher da minha vida, a mulher que pedi a Deus para minha vida. Te amo hoje, amanhã e sempre, e que aqui fiquem eternizados todos os nossos momentos juntos.`;
+    }
 
-  // Mostra ou esconde o contador de dias e a data
-  const counter = document.getElementById("counter");
-  const date = document.getElementById("date");
+    document.querySelector("h1").innerText = titleText;
 
-  if (currentIndex === 0) {
-    counter.style.display = "none";
-    date.style.display = "none";
-    const card = document.getElementById("card");
-    card.style.display = "none"; // Remove o card no primeiro evento
-  } else {
-    counter.style.display = "block";
-    date.style.display = "block";
-    counter.innerText = `${difference} dias`;
-    const formattedDate = startDate.toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-    date.innerText = ` ${formattedDate}`;
-    const card = document.getElementById("card");
-    card.style.display = "block"; // Exibe o card para os demais eventos
-  }
+    // Mostra ou esconde o contador de dias e a data
+    const counter = document.getElementById("counter");
+    const date = document.getElementById("date");
 
-  // Atualiza a imagem do evento
-  const mainImage = document.getElementById("main-image");
-  if (currentIndex === 0 || !event.image) {
-    mainImage.style.display = "none"; // Oculta a imagem no primeiro evento
-  } else {
-    mainImage.style.display = "block";
-    mainImage.src = event.image;
-  }
+    if (currentIndex === 0) {
+      counter.style.display = "none";
+      date.style.display = "none";
+      const card = document.getElementById("card");
+      card.style.display = "none"; // Remove o card no primeiro evento
+    } else {
+      counter.style.display = "block";
+      date.style.display = "block";
+      counter.innerText = `${difference} dias`;
+      const formattedDate = startDate.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+      date.innerText = ` ${formattedDate}`;
+      const card = document.getElementById("card");
+      card.style.display = "block"; // Exibe o card para os demais eventos
+    }
 
-  // Atualiza a música de fundo
-  const audioElement = document.getElementById("background-music");
-  if (event.music) {
-    audioElement.src = event.music;
-    audioElement.play();
-  }
+    // Atualiza a imagem do evento
+    const mainImage = document.getElementById("main-image");
+    if (currentIndex === 0 || !event.image) {
+      mainImage.style.display = "none"; // Oculta a imagem no primeiro evento
+    } else {
+      mainImage.style.display = "block";
+      mainImage.src = event.image;
+    }
 
-  // Atualiza o texto dos detalhes no card
-  const backText = document.getElementById("back-text");
+    // Atualiza a música de fundo
+    const audioElement = document.getElementById("background-music");
+    if (event.music) {
+      audioElement.src = event.music;
+      audioElement.play();
+    }
 
-  if (currentIndex === 0) {
-    backText.innerText = "";
-  } else {
-    backText.innerText = event.details || "Detalhes não disponíveis.";
-  }
+    // Atualiza o texto dos detalhes no card
+    const backText = document.getElementById("back-text");
 
-  // Mostrar ou esconder o botão "Em breve"
-  const comingSoonBtn = document.getElementById("coming-soon");
-  comingSoonBtn.style.display = (currentIndex === events.length - 2) ? "block" : "none";
+    if (currentIndex === 0) {
+      backText.innerText = "";
+    } else {
+      backText.innerText = event.details || "Detalhes não disponíveis.";
+    }
 
-  // Mostrar ou esconder as setas de navegação
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
+    // Mostrar ou esconder o botão "Em breve"
+    const comingSoonBtn = document.getElementById("coming-soon");
+    comingSoonBtn.style.display = (currentIndex === events.length - 2) ? "block" : "none";
 
-  // Se estiver no primeiro evento, esconder a seta de voltar
-  if (currentIndex === 0) {
-    prevBtn.style.display = "none"; // Esconde a seta de voltar no primeiro evento
-  } else {
-    prevBtn.style.display = "block"; // Mostra a seta de voltar para os outros eventos
-  }
+    // Mostrar ou esconder as setas de navegação
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
 
-  // Se estiver no penúltimo ou no último evento, esconder a seta de avançar
-  if (currentIndex === events.length - 2 || currentIndex === events.length - 1) {
-    nextBtn.style.display = "none"; // Esconde a seta de avançar
-  } else {
-    nextBtn.style.display = "block"; // Mostra a seta de avançar
-  }
+    // Se estiver no primeiro evento, esconder a seta de voltar
+    if (currentIndex === 0) {
+      prevBtn.style.display = "none"; // Esconde a seta de voltar no primeiro evento
+    } else {
+      prevBtn.style.display = "block"; // Mostra a seta de voltar para os outros eventos
+    }
+
+    // Se estiver no penúltimo ou no último evento, esconder a seta de avançar
+    if (currentIndex === events.length - 2 || currentIndex === events.length - 1) {
+      nextBtn.style.display = "none"; // Esconde a seta de avançar
+    } else {
+      nextBtn.style.display = "block"; // Mostra a seta de avançar
+    }
+
+    // Após a atualização do conteúdo, aplica o efeito fade-in
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+
+  }, 500); // Tempo de espera igual à duração da transição fade-out
 }
 
 // Efeito de flip ao clicar no card
@@ -147,6 +168,7 @@ document.getElementById("card").addEventListener("click", () => {
 document.getElementById("prev").addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
+    applyTransitionEffect();
     updateContent();
   }
 });
@@ -154,6 +176,7 @@ document.getElementById("prev").addEventListener("click", () => {
 document.getElementById("next").addEventListener("click", () => {
   if (currentIndex < events.length - 1) {
     currentIndex++;
+    applyTransitionEffect();
     updateContent();
   }
 });

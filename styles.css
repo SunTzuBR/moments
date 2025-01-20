@@ -31,6 +31,15 @@ body {
   text-align: center;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+.fade-out {
+  opacity: 0;
+  transform: translateX(-50px); /* Move ligeiramente para a esquerda */
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateX(0); /* Volta à posição original */
+}
 
 /* Contêiner do título */
 #title-container {
