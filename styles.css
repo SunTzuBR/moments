@@ -199,8 +199,8 @@ h1 {
   #main-image {
     width: 100% !important; /* Largura da imagem ajustada para celular */
     height: auto !important; /* Mantém a altura proporcional */
-    max-width: 350px !important; /* Ajuste na largura da imagem */
-    max-height: 350px !important;
+    max-width: 300px !important; /* Ajuste na largura da imagem */
+    max-height: 300px !important;
     margin: 10px auto; /* Ajuste no espaçamento da imagem */
   }
 
@@ -208,7 +208,7 @@ h1 {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
     padding: 15px !important; /* Reduz padding para ajustes no layout */
     min-height: 350px !important;
-    max-height: 500px !important;
+    max-height: 600px !important;
     flex-direction: column;
     align-items: center;
   }
