@@ -59,7 +59,7 @@ function updateContent() {
   let titleText = event.title;
 
   if (currentIndex === 0) {
-    titleText = `Nestes ${difference} dias desde que te vi, você sempre foi e sempre será a mulher da minha vida.`;
+    titleText = `Nestes ${difference} dias desde que te vi, você sempre foi e sempre será a mulher da minha vida, a mulher que pedi a Deus para minha vida. Te amo hoje, amanhã e sempre, e que aqui fiquem eternizados todos os nossos momentos juntos.`;
   }
 
   document.querySelector("h1").innerText = titleText;
@@ -120,15 +120,19 @@ function updateContent() {
   const prevBtn = document.getElementById("prev");
   const nextBtn = document.getElementById("next");
 
+  // Se estiver no primeiro evento, esconder a seta de voltar
+  if (currentIndex === 0) {
+    prevBtn.style.display = "none"; // Esconde a seta de voltar no primeiro evento
+  } else {
+    prevBtn.style.display = "block"; // Mostra a seta de voltar para os outros eventos
+  }
+
   // Se estiver no penúltimo ou no último evento, esconder a seta de avançar
   if (currentIndex === events.length - 2 || currentIndex === events.length - 1) {
     nextBtn.style.display = "none"; // Esconde a seta de avançar
   } else {
     nextBtn.style.display = "block"; // Mostra a seta de avançar
   }
-
-  // Sempre mostrar a seta de voltar
-  prevBtn.style.display = "block"; // Sempre mostra a seta de voltar
 }
 
 // Efeito de flip ao clicar no card
