@@ -37,7 +37,7 @@ function updateContent() {
 
   let titleText = event.title;
   if (currentIndex === 0) {
-    titleText = `Nesses ${difference} dias desde que te vi pela primeira vez, tive a certeza de que você é o amor da minha vida e a mulher que pedi a Deus. Quero te dar um presente único, algo que será eternizado por toda a nossa vida.`;
+    titleText = `Nestes ${difference} dias desde que te vi, você sempre foi e sempre será a mulher da minha vida, a mulher que pedi a Deus para minha vida. Te amo hoje, amanhã e sempre, e que aqui fiquem eternizados todos os nossos momentos juntos.`;
   }
 
   document.querySelector("h1").innerText = titleText;
