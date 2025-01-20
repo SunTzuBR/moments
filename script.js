@@ -19,28 +19,28 @@ const events = [
     date: "2022-05-02",
     image: "fotos/beijo.png",
     music: "musicas/beijo.mp3",
-    details: "Aquele momento especial em que nossos corações se encontraram."
+    details: "Nosso primeiro beijo foi como uma supernova, algo tão intenso e único que parecia explodir dentro de mim. E a chuva, que caiu na hora certa, só deixou tudo ainda mais emocionante, como se o mundo tivesse parado só para a gente. Voltei pra casa me sentindo o homem mais feliz do mundo, com o coração cheio de amor, tive certeza que era ao seu lado que eu queria estar."
   },
   {
     title: "Nosso recomeço",
     date: "2023-10-02",
     image: "fotos/recomeco.png",
     music: "musicas/recomeco.mp3",
-    details: "Superamos obstáculos e decidimos recomeçar juntos."
+    details: "Percebi a cada dia que sem você eu não poderia viver. Estar longe de você é como estar sem um pedaço de mim. Se não for você, nunca será ninguém. Te encontrar naquele dia foi mágico, porque você estava tão linda, como sempre, e deslumbrante, com toda a sua luz."
   },
   {
     title: "Nosso noivado",
     date: "2024-10-28",
     image: "fotos/noivado.png",
     music: "musicas/noivado.mp3",
-    details: "Um momento mágico onde decidimos construir uma vida juntos."
+    details: "Nosso noivado foi maravilhoso, desde o pedido, tão inusitado e atrapalhado, com minhas palavras presas pelo nervosismo, até a festa, que foi incrível. Ter você lá comigo, como minha noiva, foi o momento mais feliz da minha vida, um sentimento que só será superado quando eu tiver você como minha esposa."
   },
   {
     title: "Nosso casamento",
     date: "2026-11-28",
     image: "fotos/casamento.png",
     music: "musicas/casamento.mp3",
-    details: "O dia mais feliz das nossas vidas, onde selamos nosso amor."
+    details: "Esse é o momento mais esperado por mim. Quero ter você como minha esposa, acordar todos os dias ao seu lado, cuidar de você, te proteger, construir nossa família e viver momentos únicos a cada dia, como se fosse o primeiro. Eu te amo"
   }
 ];
 
