@@ -56,6 +56,16 @@ body {
   cursor: pointer;
   margin: 0 auto;
 }
+/* Ajuste para o texto no verso do card */
+#back-text {
+  padding: 10px;
+  white-space: normal; /* Permite que o texto quebre automaticamente em várias linhas */
+  word-wrap: break-word; /* Garante que palavras longas quebrem corretamente */
+  overflow: visible; /* Permite que o texto transborde, caso seja muito longo */
+  text-align: justify; /* Opcional: melhora a aparência do texto */
+  font-size: 1rem; /* Ajuste a fonte conforme necessário */
+  line-height: 1.5; /* Ajuste o espaçamento entre as linhas para melhorar a legibilidade */
+}
 
 .card .front,
 .card .back {
