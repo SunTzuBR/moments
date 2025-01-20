@@ -55,6 +55,7 @@ function applyTransitionEffect() {
     container.style.opacity = 1; // Retorna a opacidade
   }, 500); // Tempo da transição (em milissegundos)
 }
+
 // Atualiza o conteúdo do card com efeito de fade
 function updateContent() {
   // Adiciona a classe de fade-out
@@ -168,6 +169,7 @@ document.getElementById("card").addEventListener("click", () => {
 document.getElementById("prev").addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
+    resetCard(); // Reseta o card para a face frontal
     applyTransitionEffect();
     updateContent();
   }
@@ -176,6 +178,7 @@ document.getElementById("prev").addEventListener("click", () => {
 document.getElementById("next").addEventListener("click", () => {
   if (currentIndex < events.length - 1) {
     currentIndex++;
+    resetCard(); // Reseta o card para a face frontal
     applyTransitionEffect();
     updateContent();
   }
@@ -185,9 +188,18 @@ document.getElementById("next").addEventListener("click", () => {
 document.getElementById("coming-soon").addEventListener("click", () => {
   if (currentIndex < events.length - 1) {
     currentIndex++;
+    resetCard(); // Reseta o card para a face frontal
     updateContent();
   }
 });
+
+// Função para resetar o card para a frente
+function resetCard() {
+  const card = document.getElementById("card");
+  if (card.classList.contains("flipped")) {
+    card.classList.remove("flipped");
+  }
+}
 
 // Inicializa o conteúdo
 updateContent();
