@@ -208,7 +208,7 @@ h1 {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
     padding: 15px !important; /* Reduz padding para ajustes no layout */
     min-height: 350px !important;
-    max-height: 600px !important;
+    max-height: 800px !important;
     flex-direction: column;
     align-items: center;
   }
