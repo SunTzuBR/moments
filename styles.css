@@ -216,3 +216,60 @@ h1 {
     font-size: 16px !important;
   }
 }
+/* Ajustes para telas menores */
+@media (max-width: 1080px) {
+  body {
+    padding: 10px;
+    height: auto;
+    overflow-y: auto; /* Permite rolagem vertical em telas menores */
+  }
+
+  #container {
+    width: 90%;
+    padding: 15px;
+    min-height: 300px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Limita a largura em telas menores */
+  }
+
+  .card .front,
+  .card .back {
+    width: 100%;
+    height: 300px; /* Ajusta a altura proporcional ao card */
+  }
+
+  #main-image {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  #counter {
+    font-size: 22px;
+  }
+
+  #date {
+    font-size: 16px;
+  }
+
+  #arrows-container {
+    gap: 10px;
+  }
+
+  .arrow {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  #coming-soon {
+    font-size: 18px;
+  }
+}
+
