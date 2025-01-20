@@ -17,14 +17,13 @@ body {
 
 /* Estilo do contêiner principal */
 #container {
-  width: 90%; /* Agora o container ocupa 90% da largura da tela */
-  max-width: 400px; /* Largura máxima do container */
+  width: 400px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
-  min-height: 500px; /* Aumentei a altura mínima do container */
-  max-height: 600px; /* A altura máxima foi aumentada para se ajustar melhor */
+  min-height: 400px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,10 +39,8 @@ body {
 
 /* Card com perspectiva para o efeito de flip */
 .card {
-  width: 100%; /* O card ocupa 100% do tamanho do container */
-  height: auto;
-  max-width: 400px;  /* Limita a largura máxima do card */
-  max-height: 400px; /* Limita a altura máxima do card */
+  width: 400px;
+  height: 400px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s;
@@ -78,9 +75,9 @@ body {
 /* Para alinhar imagem e back do card ao centro */
 .card .front img,
 .card .back {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover; /* Garante que a imagem preencha o espaço do card sem distorcer */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço do card */
 }
 
 .card.flipped {
@@ -94,10 +91,8 @@ body {
 
 /* Estilo da imagem principal */
 #main-image {
-  width: 100%; /* Preenche a largura do card */
-  max-width: 400px; /* Largura máxima da imagem */
-  height: auto; /* Mantém a proporção */
-  max-height: 390px; /* Altura máxima da imagem */
+  width: 400px;
+  height: 390px;
   border-radius: 15px;
   border-color: white;
   object-fit: cover;
@@ -178,7 +173,7 @@ h1 {
 }
 
 /* Responsividade */
-@media (max-width: 1080px) { /* Para dispositivos como o Redmi Note 11S */
+@media (max-width: 600px) {
   body {
     flex-direction: column;
     height: 100vh;
@@ -186,37 +181,35 @@ h1 {
   }
 
   h1 {
-    font-size: 24px !important; /* Ajuste para título */
+    font-size: 20px !important;
   }
 
   #counter {
-    font-size: 22px !important; /* Ajuste no tamanho do contador */
+    font-size: 18px !important;
   }
 
   #date {
-    font-size: 18px !important; /* Ajuste no tamanho da data */
+    font-size: 16px !important;
   }
 
   #main-image {
-    width: 100% !important; /* Largura da imagem ajustada para celular */
-    height: auto !important; /* Mantém a altura proporcional */
-    max-width: 350px !important; /* Ajuste na largura da imagem */
-    max-height: 350px !important;
-    margin: 10px auto; /* Ajuste no espaçamento da imagem */
+    width: 300px !important; /* Mantém a largura fixa da imagem */
+    height: 300px !important; /* Mantém a altura fixa da imagem */
+    margin: 10px 0; /* Ajuste no espaçamento da imagem */
   }
 
   #container {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
-    padding: 15px !important; /* Reduz padding para ajustes no layout */
-    min-height: 500px !important; /* Aumentei a altura mínima do container */
-    max-height: 650px !important; /* A altura máxima foi aumentada para se ajustar melhor */
+    padding: 10px !important;
+    min-height: 250px !important;
+    max-height: 500px !important;
     flex-direction: column;
     align-items: center;
   }
 
   .arrow {
     padding: 8px !important;
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 
   #coming-soon {
