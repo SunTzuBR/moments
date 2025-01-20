@@ -23,7 +23,8 @@ body {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
-  min-height: 400px;
+  min-height: 500px; /* Aumentei a altura mínima do container */
+  max-height: 600px; /* A altura máxima foi aumentada para se ajustar melhor */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -199,16 +200,16 @@ h1 {
   #main-image {
     width: 100% !important; /* Largura da imagem ajustada para celular */
     height: auto !important; /* Mantém a altura proporcional */
-    max-width: 300px !important; /* Ajuste na largura da imagem */
-    max-height: 300px !important;
+    max-width: 350px !important; /* Ajuste na largura da imagem */
+    max-height: 350px !important;
     margin: 10px auto; /* Ajuste no espaçamento da imagem */
   }
 
   #container {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
     padding: 15px !important; /* Reduz padding para ajustes no layout */
-    min-height: 350px !important;
-    max-height: 800px !important;
+    min-height: 500px !important; /* Aumentei a altura mínima do container */
+    max-height: 650px !important; /* A altura máxima foi aumentada para se ajustar melhor */
     flex-direction: column;
     align-items: center;
   }
