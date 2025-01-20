@@ -18,7 +18,7 @@ body {
 /* Estilo do contêiner principal */
 #container {
   width: 90%; /* Agora o container ocupa 90% da largura da tela */
-  max-width: 450px; /* Largura máxima do container */
+  max-width: 400px; /* Largura máxima do container */
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
@@ -177,7 +177,7 @@ h1 {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1080px) { /* Para dispositivos como o Redmi Note 11S */
   body {
     flex-direction: column;
     height: 100vh;
@@ -185,29 +185,29 @@ h1 {
   }
 
   h1 {
-    font-size: 22px !important;
+    font-size: 24px !important; /* Ajuste para título */
   }
 
   #counter {
-    font-size: 20px !important;
+    font-size: 22px !important; /* Ajuste no tamanho do contador */
   }
 
   #date {
-    font-size: 16px !important;
+    font-size: 18px !important; /* Ajuste no tamanho da data */
   }
 
   #main-image {
-    width: 100% !important; /* Ajusta a largura da imagem */
+    width: 100% !important; /* Largura da imagem ajustada para celular */
     height: auto !important; /* Mantém a altura proporcional */
-    max-width: 350px !important; /* Ajuste na largura da imagem para telas pequenas */
+    max-width: 350px !important; /* Ajuste na largura da imagem */
     max-height: 350px !important;
-    margin: 10px auto;
+    margin: 10px auto; /* Ajuste no espaçamento da imagem */
   }
 
   #container {
     width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
-    padding: 15px !important;
-    min-height: 300px !important;
+    padding: 15px !important; /* Reduz padding para ajustes no layout */
+    min-height: 350px !important;
     max-height: 500px !important;
     flex-direction: column;
     align-items: center;
@@ -219,32 +219,6 @@ h1 {
   }
 
   #coming-soon {
-    font-size: 18px !important;
-  }
-}
-
-@media (max-width: 600px) {
-  /* Para telas menores (como celulares compactos) */
-  #main-image {
-    max-width: 300px !important;
-    max-height: 300px !important;
-  }
-
-  h1 {
-    font-size: 18px !important;
-  }
-
-  #counter {
     font-size: 16px !important;
-  }
-
-  #date {
-    font-size: 14px !important;
-  }
-
-  #container {
-    padding: 10px !important;
-    min-height: 250px !important;
-    width: 100% !important; /* Para ocupar 100% da tela em dispositivos muito pequenos */
   }
 }
