@@ -34,7 +34,7 @@ body {
 
 /* Contêiner do título */
 #title-container {
-  margin-bottom: 20px; /* Espaço abaixo do título */
+  margin-top: 20px; /* Espaço abaixo da imagem */
 }
 
 /* Card com perspectiva para o efeito de flip */
@@ -83,8 +83,8 @@ body {
 
 /* Estilo da imagem principal */
 #main-image {
-  width: 100%; /* Ajusta a largura para 100% do card */
-  height: auto; /* Ajusta a altura automaticamente mantendo a proporção */
+  width: 400px; /* Largura fixa */
+  height: 390px; /* Altura fixa */
   border-radius: 15px;
   border-color: white;
   object-fit: cover;
@@ -185,15 +185,16 @@ h1 {
   }
 
   #main-image {
-    width: 100% !important; /* Ajusta a largura para 100% do card */
-    height: auto !important; /* Ajusta a altura automaticamente mantendo a proporção */
+    width: 400px !important; /* Mantém a largura fixa da imagem */
+    height: 390px !important; /* Mantém a altura fixa da imagem */
   }
 
   #container {
-    max-width: 80% !important; /* Reduz a largura do container para caber melhor em telas menores */
+    width: 90% !important; /* Ajusta a largura do container para caber melhor em telas menores */
     padding: 10px !important;
     min-height: 250px !important;
     max-height: 400px !important;
+    flex-direction: column;
   }
 
   .arrow {
@@ -203,17 +204,5 @@ h1 {
 
   #coming-soon {
     font-size: 16px !important;
-  }
-
-  /* Ajusta a imagem do card para se ajustar no celular */
-  .card {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .card .front,
-  .card .back {
-    width: 100% !important;
-    height: auto !important;
   }
 }
