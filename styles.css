@@ -17,13 +17,13 @@ body {
 
 /* Estilo do contêiner principal */
 #container {
-  width: 400px;
+  width: 90%; /* Agora o container ocupa 90% da largura da tela */
+  max-width: 400px; /* Largura máxima do container */
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   position: relative;
   min-height: 400px;
-  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +39,7 @@ body {
 
 /* Card com perspectiva para o efeito de flip */
 .card {
-  width: 100%;
+  width: 100%; /* O card ocupa 100% do tamanho do container */
   height: auto;
   max-width: 400px;  /* Limita a largura máxima do card */
   max-height: 400px; /* Limita a altura máxima do card */
