@@ -83,8 +83,8 @@ body {
 
 /* Estilo da imagem principal */
 #main-image {
-  width: 400px;
-  height: 390px;
+  width: 100%; /* Ajusta a largura para 100% do card */
+  height: auto; /* Ajusta a altura automaticamente mantendo a proporção */
   border-radius: 15px;
   border-color: white;
   object-fit: cover;
@@ -184,8 +184,8 @@ h1 {
   }
 
   #main-image {
-    width: 200px !important;
-    height: 200px !important;
+    width: 100% !important; /* Ajusta a largura para 100% do card */
+    height: auto !important; /* Ajusta a altura automaticamente mantendo a proporção */
   }
 
   #container {
