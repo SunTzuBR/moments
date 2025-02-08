@@ -41,7 +41,7 @@ const events = [
     date: "2025-01-17",
     image: "fotos/viagem.png",
     music: "musicas/viagem.mp3",
-    details: "Esse é o momento mais esperado por mim. Quero ter você como minha esposa, acordar todos os dias ao seu lado, cuidar de você, te proteger, construir nossa família e viver momentos únicos a cada dia, como se fosse o primeiro. Eu te amo"
+    details: "Nossa primeira viagem juntos foi um sonho que se tornou realidade. Cada momento ao seu lado foi perfeito, como se o tempo parasse só para nós. Esses três dias contigo reforçaram o que já sabia: quero ser teu marido, teu porto seguro, teu companheiro em todas as manhãs que acordarmos juntos. Não importa o lugar, pois com você tudo é perfeito. Te amo mais do que as palavras podem expressar, meu amor. Tudo por você e com você."
   }, 
   
   {
