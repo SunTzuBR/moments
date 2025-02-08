@@ -35,6 +35,15 @@ const events = [
     music: "musicas/noivado.mp3",
     details: "Nosso noivado foi maravilhoso, desde o pedido, tão inusitado e atrapalhado, com minhas palavras presas pelo nervosismo, até a festa, que foi incrível. Ter você lá comigo, como minha noiva, foi o momento mais feliz da minha vida, um sentimento que só será superado quando eu tiver você como minha esposa."
   },
+  
+  {
+    title: "Nossa 1° viagem juntos",
+    date: "2025-01-17",
+    image: "fotos/viagem.png",
+    music: "musicas/viagem.mp3",
+    details: "Esse é o momento mais esperado por mim. Quero ter você como minha esposa, acordar todos os dias ao seu lado, cuidar de você, te proteger, construir nossa família e viver momentos únicos a cada dia, como se fosse o primeiro. Eu te amo"
+  }, 
+  
   {
     title: "Nosso casamento",
     date: "2026-11-28",
