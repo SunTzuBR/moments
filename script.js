@@ -46,7 +46,7 @@ const events = [
   
   {
     title: "Nosso casamento",
-    date: "2026-11-28",
+    date: "2026-09-13",
     image: "fotos/casamento.png",
     music: "musicas/casamento.mp3",
     details: "Esse é o momento mais esperado por mim. Quero ter você como minha esposa, acordar todos os dias ao seu lado, cuidar de você, te proteger, construir nossa família e viver momentos únicos a cada dia, como se fosse o primeiro. Eu te amo"
